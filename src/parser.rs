@@ -210,10 +210,13 @@ impl MktdtParser {
     ) -> Result<()> {
         let snapshot = match it.next() {
             Some(code) => {
-                let snapshot = self
-                    .cached
-                    .entry(code.to_string())
-                    .or_insert(Default::default());
+                let snapshot = match self.cached.get_mut(code) {
+                    Some(s) => s,
+                    None => {
+                        self.cached.insert(code.to_string(), Default::default());
+                        self.cached.get_mut(code).unwrap()
+                    }
+                };
 
                 if snapshot.symbol.is_none() {
                     snapshot.set_symbol(Symbol {
