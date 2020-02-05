@@ -1,0 +1,17 @@
+syntax="proto3";
+
+package ftcodec;
+
+
+message Fields {
+    repeated int64 value = 1;
+}
+
+message DateTime {
+    int64 value = 1;
+}
+
+message Symbol {
+    int32 market = 1;
+    string code = 2;
+}

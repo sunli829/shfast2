@@ -1,0 +1,30 @@
+namespace FtCodec;
+
+struct Number {
+    val: int64;
+    dec: int8;
+}
+
+struct BidAsk {
+    price: Number;
+    volume: Number;
+}
+
+table Snapshot {
+    datetime: uint64;
+    symbol: string;
+    name: string;
+    preClosePrice: Number;
+    openPrice: Number;
+    highPrice: Number;
+    lowPrice: Number;
+    price: Number;
+    closePrice: Number;
+    amount: Number;
+    volume: Number;
+    bids : [BidAsk];
+    asks : [BidAsk];
+}
+
+
+root_type Snapshot;

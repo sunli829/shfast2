@@ -1,0 +1,16 @@
+[package]
+name = "shfast2"
+version = "0.1.0"
+authors = ["sunli <scott_s829@163.com>"]
+edition = "2018"
+
+[dependencies]
+chrono = "0.4"
+encoding_rs = "0.8"
+encoding_rs_io = "0.1.6"
+bytes="0.5"
+protobuf = { version = "2", features = ["with-bytes"] }
+anyhow = "1.0.25"
+
+[build-dependencies]
+protoc-rust = "2.0"

@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+package ftcodec;
+
+import "common.proto";
+
+
+message KLine {
+    enum Field {
+        PRICE = 0;
+        VOLUME = 1;
+        AMOUNT = 2;
+        PRE_CLOSE_PRICE = 3;
+        OPEN_PRICE = 4;
+        HIGH_PRICE = 5;
+        LOW_PRICE = 6;
+        CLOSE_PRICE = 7;
+        IOPV = 8;
+        PRE_IOPV = 9;
+        SETTLEMENT = 10;
+        PRE_SETTLEMENT = 11;
+    }
+    DateTime timestamp = 1;
+    Fields fields = 2;
+}

@@ -1,0 +1,55 @@
+syntax = "proto3";
+
+package ftcodec;
+
+import "common.proto";
+
+message Snapshot {
+    enum Field {
+        PRICE = 0;
+        VOLUME = 1;
+        AMOUNT = 2;
+        PRE_CLOSE_PRICE = 3;
+        OPEN_PRICE = 4;
+        HIGH_PRICE = 5;
+        LOW_PRICE = 6;
+        CLOSE_PRICE = 7;
+        IOPV = 8;
+        PRE_IOPV = 9;
+        SETTLEMENT = 10;
+        PRE_SETTLEMENT = 11;
+        BID1_PRICE = 12;
+        BID1_VOLUME = 13;
+        ASK1_PRICE = 14;
+        ASK1_VOLUME = 15;
+        BID2_PRICE = 16;
+        BID2_VOLUME = 17;
+        ASK2_PRICE = 18;
+        ASK2_VOLUME = 19;
+        BID3_PRICE = 20;
+        BID3_VOLUME = 21;
+        ASK3_PRICE = 22;
+        ASK3_VOLUME = 23;
+        BID4_PRICE = 24;
+        BID4_VOLUME = 25;
+        ASK4_PRICE = 26;
+        ASK4_VOLUME = 27;
+        BID5_PRICE = 28;
+        BID5_VOLUME = 29;
+        ASK5_PRICE = 30;
+        ASK5_VOLUME = 31;
+        TOTAL = 32;
+    }
+    DateTime timestamp = 1;
+    Fields fields = 2;
+}
+
+message ObjSnapshot {
+    Symbol symbol = 1;
+    string name = 2;
+    repeated Snapshot lists = 3;
+}
+
+message ObjSnapshotList {
+    repeated ObjSnapshot lists = 1;
+}
